@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('email',30);
             $table->string('address',50);
             $table->string('phone',30);
-            $table->char('gender',1);
+            $table->enum('gender',['M','F']);
             $table->timestamps();
         });
     }
