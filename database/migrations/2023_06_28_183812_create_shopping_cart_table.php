@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('shopping_cart', function (Blueprint $table) {
             $table->id();
             $table->dateTime('start_date', $precision = 0);
-            $table->enum('status',['Activa','Cancelada', 'Desactivada'] )->default('Desactivada');
             $table->integer('quantity');
             $table->double('sale_price', 8, 8);
+            $table->enum('status',['Activa','Cancelada', 'Desactivada'])->default('Desactivada');
             $table->foreignId('product_id')->constrained('product');
             $table->foreignId('buyer_id')->constrained('buyer');
             $table->timestamps();
